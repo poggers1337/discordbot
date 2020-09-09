@@ -20,3 +20,7 @@ urllib3==1.25.10
 websocket-client ==0.57.0
 wheel==0.35.1
 yarl==1.5.1
+databases==0.3.2
+APScheduler==3.6.3
+db2==0.1.1
+db==0.1.1

@@ -32,31 +32,9 @@ aj = 'you, watching me!?'
 ak = 'children!'
 al = 'anime.....thighs'
 am = 'your dad in your mum, LOL!'
-an = 'tizzards harams!'
+an = 'youtube!'
 # images
-dumbmemes = ["https://imgur.com/t/meme_dump/OrQYwWm",
-             "https://imgur.com/t/meme_dump/HGe6t26",
-             "https://imgur.com/t/meme_dump/UuZM7nx",
-             "https://imgur.com/t/meme_dump/vglTJqH",
-             "https://imgur.com/gallery/f1o0x",
-             "https://imgur.com/gallery/BJqXV",
-             "https://imgur.com/gallery/IoQwV",
-             "https://imgur.com/gallery/KU679",
-             "https://imgur.com/gallery/8ep3G",
-             "https://imgur.com/gallery/H3Ddh",
-             "https://imgur.com/t/dank_memes/CtbMBef",
-             "https://imgur.com/t/dank_memes/oTWQb71",
-             "https://imgur.com/t/dank_memes/8U4jK4A",
-             "https://imgur.com/t/dank_memes/zXWKSqb",
-             "https://imgur.com/t/dank_memes/b5IdI1I",
-             "https://imgur.com/t/dank_memes/afoAguu",
-             "https://imgur.com/t/dank_memes/aKiEBkx",
-             "https://imgur.com/t/dank_memes/eSsiHVn",
-             "https://imgur.com/t/dank_memes/pxuqRJ2",
-             "https://imgur.com/t/dank_memes/LJQTSxH",
-             "https://imgur.com/t/dank_memes/o4UR43E",
-             "https://imgur.com/t/dank_memes/7eRVybj"  # add more when u want to
-             ]
+
 
 # list of words that are not allowed
 filtered_words = ["nigga", "nigger", "child-fucker", "child fucker", "jesus christ", "jesus christjesus christ",
@@ -66,7 +44,7 @@ filtered_words = ["nigga", "nigger", "child-fucker", "child fucker", "jesus chri
 discord.ext.commands.HelpCommand(show_hidden=True)
 
 
-# Ready/start
+# @client events
 
 @client.event
 async def on_ready():
@@ -133,6 +111,10 @@ async def on_ready():
             activity = discord.Activity(name=am, type=discord.ActivityType.watching)
             await client.change_presence(activity=activity)
             await asyncio.sleep(3600)
+        elif rb == 13:
+            activity = discord.Activity(name=an, type=discord.ActivityType.watching)
+            await client.change_presence(activity=activity)
+            await asyncio.sleep(3600)
 
 
 # await bot.change_presence(game=discord.Game(name='1Hentai'))
@@ -161,7 +143,7 @@ async def on_command_error(ctx, error, ):
         await ctx.send(":pencil2: Check that the command exists and that you have spelt it correctly! :pencil2: ")
     elif isinstance(error, commands.errors.BadArgument):
         await ctx.message.delete()
-        await ctx.send(":pencil2: Check that the arguement is correct and that you have spelt it correctly! :pencil2: ")
+        await ctx.send(":pencil2: Check that the argument is correct and that you have spelt it correctly! :pencil2: ")
     else:
         raise error
 
@@ -281,6 +263,7 @@ async def srp(ctx, subred="memes"):
 
     embed = discord.Embed(title=name, colour=discord.Colour.gold())
     embed.set_image(url=url)
+    embed.set_footer(icon_url=ctx.author.avatar_url, text=f"requested by {ctx.author.name}")
     await ctx.send(embed=embed)
 
 
