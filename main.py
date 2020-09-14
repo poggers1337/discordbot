@@ -17,6 +17,7 @@ from asyncio import sleep
 
 # other crap that isnt important ( It is important)
 client = commands.Bot(command_prefix="n!")
+client.remove_command('help')
 # rules
 f = open("idk shit/rules.txt", "r")
 rules = f.readlines()
@@ -41,7 +42,7 @@ filtered_words = ["nigga", "nigger", "child-fucker", "child fucker", "jesus chri
                   "christ", "coon", "niggernigger", "child fuckerchild fucker"]
 
 # removed commands
-discord.ext.commands.HelpCommand(show_hidden=True)
+
 
 
 # @client events
@@ -50,71 +51,68 @@ discord.ext.commands.HelpCommand(show_hidden=True)
 async def on_ready():
     print('working')
 
-    print('the error does not matter')
+    #print('the error does not matter')
 
-    while not client.is_closed():
-
-        rb = 1
-        rnb = random.randint(0, 11)
-        rb += rnb
-        print(rb)
-        if rb == 1:
-            activity = discord.Activity(name=ab, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-        elif rb == 2:
-            activity = discord.Activity(name=ac, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-
-        elif rb == 3:
-            activity = discord.Activity(name=ad, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-
-        elif rb == 4:
-            activity = discord.Activity(name=ae, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-
-        elif rb == 5:
-            activity = discord.Activity(name=af, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-
-        elif rb == 6:
-            activity = discord.Activity(name=ag, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-        elif rb == 7:
-            activity = discord.Activity(name=ah, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-
-        elif rb == 8:
-            activity = discord.Activity(name=ai, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-        elif rb == 9:
-            activity = discord.Activity(name=aj, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-        elif rb == 10:
-            activity = discord.Activity(name=ak, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-        elif rb == 11:
-            activity = discord.Activity(name=al, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-        elif rb == 12:
-            activity = discord.Activity(name=am, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
-        elif rb == 13:
-            activity = discord.Activity(name=an, type=discord.ActivityType.watching)
-            await client.change_presence(activity=activity)
-            await asyncio.sleep(3600)
+    #while not client.is_closed():
+        #rb = 1
+        #rnb = random.randint(0, 11)
+        #rb += rnb
+        #print(rb)
+        #if rb == 1:
+       #     activity = discord.Activity(name=ab, type=discord.ActivityType.watching)
+      #      await client.change_presence(activity=activity)
+     #       await asyncio.sleep(3600)
+    #    elif rb == 2:
+   #         activity = discord.Activity(name=ac, type=discord.ActivityType.watching)
+  #          await client.change_presence(activity=activity)
+ #           await asyncio.sleep(3600)
+#
+    #    elif rb == 3:
+   #         activity = discord.Activity(name=ad, type=discord.ActivityType.watching)
+  #          await client.change_presence(activity=activity)
+ #           await asyncio.sleep(3600)
+#
+    #    elif rb == 4:
+   #         activity = discord.Activity(name=ae, type=discord.ActivityType.watching)
+  #          await client.change_presence(activity=activity)
+ #           await asyncio.sleep(3600)
+#
+    #    elif rb == 5:
+   #         activity = discord.Activity(name=af, type=discord.ActivityType.watching)
+  #          await client.change_presence(activity=activity)
+ #           await asyncio.sleep(3600)
+#
+        #elif rb == 6:
+       #     activity = discord.Activity(name=ag, type=discord.ActivityType.watching)
+      #      await client.change_presence(activity=activity)
+     #       await asyncio.sleep(3600)
+    #    elif rb == 7:
+   #         activity = discord.Activity(name=ah, type=discord.ActivityType.watching)
+  #          await client.change_presence(activity=activity)
+ #           await asyncio.sleep(3600)
+#
+        #elif rb == 8:
+       #     activity = discord.Activity(name=ai, type=discord.ActivityType.watching)
+      #      await client.change_presence(activity=activity)
+     #       await asyncio.sleep(3600)
+    #    elif rb == 9:
+   #         activity = discord.Activity(name=aj, type=discord.ActivityType.watching)
+  #           await asyncio.sleep(3600)
+#        elif rb == 10:
+          #  activity = discord.Activity(name=ak, type=discord.ActivityType.watching)
+         #    await asyncio.sleep(3600)
+        #elif rb == 11:
+       #    activity = discord.Activity(name=al, type=discord.ActivityType.watching)
+      #      await client.change_presence(activity=activity)
+     #       await asyncio.sleep(3600)
+    #    elif rb == 12:
+   #         activity = discord.Activity(name=am, type=discord.ActivityType.watching)
+  #          await client.change_presence(activity=activity)
+ #           await asyncio.sleep(3600)
+#        elif rb == 13:
+            #activity = discord.Activity(name=an, type=discord.ActivityType.watching)
+            #await client.change_presence(activity=activity)
+           # await asyncio.sleep(3600)
 
 
 # await bot.change_presence(game=discord.Game(name='1Hentai'))
@@ -144,13 +142,32 @@ async def on_command_error(ctx, error, ):
     elif isinstance(error, commands.errors.BadArgument):
         await ctx.message.delete()
         await ctx.send(":pencil2: Check that the argument is correct and that you have spelt it correctly! :pencil2: ")
-    else:
-        raise error
+
+
+@commands.Cog.listener()
+async def on_command_error(self, ctx, error,msg):
+  if isinstance(error, commands.errors.NSFWChannelRequired):
+     msg.title = "NSFW Command"
+     msg.description = error.args[0]
+     return await ctx.send(embed=msg)
+    
 
 
 # commands
 
-# rules
+#help
+@client.command(pass_contextc = True)
+async def help(ctx):
+    author = ctx.message.author()
+    embed = discord.Embed(color=discord.Color.red())
+    embed.set_author('Help commands')
+    embed.add_field(name='Basic commands', value='help; shows this command and how to run it', inline=True)
+    await ctx.send_message(embed=embed)
+
+
+
+
+
 @client.command(aliases=['r'])
 async def rule(ctx, *, number):
     await ctx.send(rules[int(number)])
@@ -265,6 +282,8 @@ async def srp(ctx, subred="memes"):
     embed.set_image(url=url)
     embed.set_footer(icon_url=ctx.author.avatar_url, text=f"requested by {ctx.author.name}")
     await ctx.send(embed=embed)
+#nsfw
+
 
 
 # dont change passed here
