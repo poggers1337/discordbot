@@ -7,11 +7,7 @@ import asyncio
 import praw
 #a
 # reddit data shit
-reddit = praw.Reddit(client_id="pmVr1EokJ8Z8hQ",
-                     client_secret="jD3-CSBysApJEMg0-cjam5FULYA",
-                     username="jamescoloum",
-                     password="14millie1#",
-                     user_agent="python")
+
 
 from asyncio import sleep
 
